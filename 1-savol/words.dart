@@ -1,6 +1,6 @@
 class Words {
   String? _word;
-  factory Words.takeWord(String str) {
+ /* factory Words.takeWord(String str) {
     if (str.isNotEmpty && str == str.toLowerCase()) {
     } else {
       throw CustomException();
@@ -25,7 +25,7 @@ class Words {
         }
       }
     }
-  }
+  }*/
 }
 
 class CustomException implements Exception {}
