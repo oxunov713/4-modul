@@ -1,6 +1,6 @@
 import 'words.dart';
 
 void main() {
-  
-  print(reverseVowels("hello"));
+  final word = Words.takeWord('hbub');
+  print(word.reverseVowels("halo"));
 }
