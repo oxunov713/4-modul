@@ -1,35 +1,35 @@
 class Words {
   late String _word;
+  Words(this._word);
   factory Words.takeWord(String str) {
     if (str.isNotEmpty && str == str.toLowerCase()) {
-      return Words(this._word);
-      
+      return Words(str);
     } else {
       throw CustomException();
     }
   }
 
-  String reverseVowels(String str) {
+  String reverseVowels() {
     List<String> existUnli = [];
     List<String> returnList = [];
     String retStr = '';
     String unli = 'aeiou';
 
     int n = 0;
-    for (var i = 0; i < str.length; i++) {
-      returnList.add(str[i]);
+    for (var i = 0; i < _word.length; i++) {
+      returnList.add(_word[i]);
       for (var j = 0; j < unli.length; j++) {
-        if (str[i] == unli[j]) {
-          existUnli.add(str[i]);
+        if (_word[i] == unli[j]) {
+          existUnli.add(_word[i]);
         }
       }
     }
-    for (var i = returnList.length - 1; i > 0; i--) {
+    for (var i = returnList.length - 1; i >= 0; i--) {
       for (var j = 0; j < unli.length; j++) {
         if (existUnli.isNotEmpty) {
           if (returnList[i] == unli[j]) {
-            returnList[i] = existUnli[n];
-            existUnli.remove(existUnli[n]);
+            returnList[i] = existUnli.first;
+            existUnli.removeAt(n);
           }
         }
       }
